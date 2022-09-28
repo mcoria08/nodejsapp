@@ -1,8 +1,23 @@
 {
-  "name": "devopsNodeJsPipeline",
+  "name": "devopsnodejspipeline",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
-  "repository": "https://github.com/mcoria08/nodejsapp.git",
-  "author": "Miguel Coria <mcoria08@gmail.com>",
-  "license": "MIT"
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcoria08/nodejsapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mcoria08/nodejsapp/issues"
+  },
+  "homepage": "https://github.com/mcoria08/nodejsapp#readme"
 }
