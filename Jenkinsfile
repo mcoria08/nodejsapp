@@ -30,15 +30,15 @@ pipeline {
     // Stopping Docker containers for cleaner Docker run
     stage('stop previous containers') {
       steps {
-        sh 'docker ps -f name=mypythonContainer -q | xargs --no-run-if-empty docker container stop'
-        sh 'docker container ls -a -fname=mypythonContainer -q | xargs -r docker container rm'
+        sh 'docker ps -f name=nodejsapp -q | xargs --no-run-if-empty docker container stop'
+        sh 'docker container ls -a -fname=nodejsapp -q | xargs -r docker container rm'
       }
     }
    
     stage('Docker Run') {
       steps{
         script {
-          sh 'docker run -d -p 8096:5000 --rm --name mypythonContainer 896304481314.dkr.ecr.us-east-2.amazonaws.com/jenkins-pipeline-build-demo-iii:latest'
+          sh 'docker run -d -p 8096:5000 --rm --name py 896304481314.dkr.ecr.us-east-2.amazonaws.com/jenkins-pipeline-build-demo-iii:latest'
         }
       }
     }
