@@ -1,23 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-
-  <groupId>com.mycompany</groupId>
-  <artifactId>my-node-project</artifactId>
-  <version>1.0.0</version>
-  <packaging>npm</packaging>
-
+<project>
+  <!-- ... everything else -->
   <build>
     <plugins>
+      <!-- ... other plugins -->
       <plugin>
-        <groupId>com.seovic.maven.plugins</groupId>
-        <artifactId>npm-maven-plugin</artifactId>
-        <version>1.0.4</version>
-        <extensions>true</extensions>
-      </plugin>
+                <groupId>com.github.eirslett</groupId>
+                <artifactId>nodejs-app</artifactId>
+                <version>1.4</version>
+
+                <executions>
+                    <execution>
+                        <id>install node and npm</id>
+                        <goals>
+                            <goal>install-node-and-npm</goal>
+                        </goals>
+                        <configuration>
+                            <nodeVersion>v7.10.0</nodeVersion>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>npm install</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <configuration>
+                            <arguments>install</arguments>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>gulp</id>
+                        <goals>
+                            <goal>gulp</goal>
+                        </goals>
+                        <configuration>
+                            <arguments>default --envName ${environment.name}</arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
     </plugins>
   </build>
-
 </project>
