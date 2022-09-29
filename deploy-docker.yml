@@ -3,18 +3,18 @@
   become: True
   tasks:
     - name: Install NodeJS
-    yum:
-      name: nodejs
-      state: present
+      yum:
+        name: nodejs
+        state: present
     - name: Install Docker
-    yum:
-      name: docker
-      state: present      
+      yum:
+        name: docker
+        state: present      
     - name: Start the container
-    docker_container:
-      name: nodejsapp
-      image: "mcoria/nodejsapp:{{DOCKER_TAG}}"
-      state: started     
-      published_porst:
-        - 0.0.0.0:8080:8080
+      docker_container:
+        name: nodejsapp
+        image: "mcoria/nodejsapp:{{DOCKER_TAG}}"
+        state: started     
+        published_porst:
+          - 0.0.0.0:8080:8080
       
