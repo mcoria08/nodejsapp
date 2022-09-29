@@ -1,0 +1,9 @@
+---
+- hosts: dev
+  become: True
+  tasks:
+    - name: Install NodeJS
+    yum:
+      name: nodejs
+      state: present
+      
