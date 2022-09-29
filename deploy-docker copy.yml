@@ -1,7 +1,11 @@
 ---
 - hosts: dev
   become: True
-  tasks:    
+  tasks:
+    - name: Install NodeJS
+      yum:
+        name: nodejs
+        state: present
     - name: Install Docker
       yum:
         name: docker
