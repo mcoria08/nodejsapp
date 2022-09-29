@@ -1,0 +1,9 @@
+---
+
+- hosts: all
+  tasks: 
+  - name: instala vim
+    yum: name=vim state=present
+    become: true
+  -name: saludo
+    shell: echo hola
