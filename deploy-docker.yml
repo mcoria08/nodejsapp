@@ -14,6 +14,6 @@
         name: nodejsapp
         image: "mcoria/nodejsapp:{{DOCKER_TAG}}"
         state: started     
-        published_porst:
+        published_ports:
           - 0.0.0.0:8080:8080
       
