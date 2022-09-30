@@ -6,7 +6,7 @@
       shell: "amazon-linux-extras install docker=18.06.1 -y" 
     - name: Package Installer For Python3 
       package:
-        name: python-pip
+        name: python3
         state: present
     - name: Installing python library for the Docker Remote API
       pip:
