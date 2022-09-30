@@ -4,11 +4,13 @@
   tasks:   
     - name: Install docker-ce (centos) via amazon-linux-extras packages
       shell: "amazon-linux-extras install docker=18.06.1 -y" 
-
-    - name: Install Docker module for Python
+    - name: Package Installer For Python3 
+      package:
+        name: python3
+        state: present
+    - name: Installing python library for the Docker Remote API
       pip:
-        executable: pip3
-        name: docker
+        name: docker-py
     - name: Enable Docker CE service at startup
       service:
         name: docker
